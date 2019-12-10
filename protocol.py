@@ -91,9 +91,13 @@ class CRAP(StackingProtocol):
         self.higher_transport = CRAPTransport(transport)
         self.higher_transport.connect_protocol(self)
         r = int(input("Enter testing rule number: "))
-        self.load_key(r)
-        #self.make_key()
-        #print("made key")
+        if r == 0:
+            self.make_key()
+            print("makekey")
+        else:
+            self.load_key(r)
+            print("test rule" + str(r))
+        
         if self.mode == "client":
             print("client init")
             try:

@@ -116,28 +116,17 @@ class ClientProtocol(asyncio.Protocol):
 
         
 def main(args):
-    output = "    | r1 | r2 | r3 | r4 |\n"
-    for k in range(7):
-        team_num = int(input("Enter testing team number: "))
-        output = output + " t" + str(team_num) + " |"
-        set_server_info(team_num)
-        for i in range(4):
-            try:
-                
-                loop = asyncio.get_event_loop()
-                firstPkt = create_game_init_packet(USER_NAME_INIT_PKT)
-                coro = playground.create_connection(lambda: ClientProtocol(loop=loop, firstPkt=firstPkt),
+    team_num = int(input("team number: "))
+    set_server_info(team_num)
+  
+    loop = asyncio.get_event_loop()
+    firstPkt = create_game_init_packet(USER_NAME_INIT_PKT)
+    coro = playground.create_connection(lambda: ClientProtocol(loop=loop, firstPkt=firstPkt),
                                                         IP_ADDR, PORT, family="lzy_lab3")  # for E5
-                loop.run_until_complete(coro)
-                loop.run_forever()
-                loop.close()
-                output = output + " P  |"
-            except Exception as e:
-                print("fail")
-                print(e)
-                output = output + " F  |"
-        output = output+"\n"
-    print(output)
+    loop.run_until_complete(coro)
+    loop.run_forever()
+    loop.close()
+
 
 
 if __name__ == "__main__":
