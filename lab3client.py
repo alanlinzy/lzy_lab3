@@ -122,7 +122,7 @@ def main(args):
     loop = asyncio.get_event_loop()
     firstPkt = create_game_init_packet(USER_NAME_INIT_PKT)
     coro = playground.create_connection(lambda: ClientProtocol(loop=loop, firstPkt=firstPkt),
-                                                        IP_ADDR, PORT, family="lzy_lab3")  # for E5
+                                                        IP_ADDR, PORT, family="crap_xjm_lab3")  # for E5
     loop.run_until_complete(coro)
     loop.run_forever()
     loop.close()
