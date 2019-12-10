@@ -123,7 +123,7 @@ def main(args):
     else:
         team_num = int(args[0])
 
-    set_server_info(teamnum)
+    set_server_info(team_num)
 
     loop = asyncio.get_event_loop()
     firstPkt = create_game_init_packet(USER_NAME_INIT_PKT)
