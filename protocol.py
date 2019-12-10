@@ -19,7 +19,7 @@ from cryptography.hazmat.primitives.asymmetric import ec, rsa, padding
 from cryptography.hazmat.primitives.kdf.hkdf import HKDF
 from cryptography.hazmat.primitives.serialization import PublicFormat, Encoding, load_pem_public_key,load_pem_private_key
 from cryptography import x509
-from ..poop.protocol import POOP
+from poop.protocol import POOP
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
