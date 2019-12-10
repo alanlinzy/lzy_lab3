@@ -116,7 +116,7 @@ class ClientProtocol(asyncio.Protocol):
 
         
 def main(args):
-    output = "\t| r1 | r2 | r3 | r4 |\n"
+    output = "    | r1 | r2 | r3 | r4 |\n"
     for k in range(7):
         team_num = int(input("Enter testing team number: "))
         output = output + " t" + str(team_num) + " |"
@@ -132,8 +132,9 @@ def main(args):
                 loop.run_forever()
                 loop.close()
                 output = output + " P  |"
-            except:
+            except Exception as e:
                 print("fail")
+                print(e)
                 output = output + " F  |"
         output = output+"\n"
     print(output)
