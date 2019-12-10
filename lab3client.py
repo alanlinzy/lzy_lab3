@@ -23,8 +23,6 @@ def set_server_info(team):
     global IP_ADDR
     global PORT
 
-    team = num
-
     if team == 1:
         IP_ADDR = "20194.1.1.200"
         PORT    = 12345
