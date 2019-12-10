@@ -122,14 +122,18 @@ def main(args):
         team_num = int(args[0])
 
     set_server_info(team_num)
-
-    loop = asyncio.get_event_loop()
-    firstPkt = create_game_init_packet(USER_NAME_INIT_PKT)
-    coro = playground.create_connection(lambda: ClientProtocol(loop=loop, firstPkt=firstPkt),
-                                            IP_ADDR, PORT, family="lzy_lab3")  # for E5
-    loop.run_until_complete(coro)
-    loop.run_forever()
-    loop.close()
+    for i in range(4):
+        try:
+            
+            loop = asyncio.get_event_loop()
+            firstPkt = create_game_init_packet(USER_NAME_INIT_PKT)
+            coro = playground.create_connection(lambda: ClientProtocol(loop=loop, firstPkt=firstPkt),
+                                                    IP_ADDR, PORT, family="lzy_lab3")  # for E5
+            loop.run_until_complete(coro)
+            loop.run_forever()
+            loop.close()
+        except:
+            print("fail")
 
 
 if __name__ == "__main__":
