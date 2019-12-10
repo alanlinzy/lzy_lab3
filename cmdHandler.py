@@ -34,8 +34,8 @@ E6_STRS = ["look mirror",
 
 # bank params
 BANK_CERT_FILE_NAME = "20194_online_bank.cert"
-MY_UNAME = "wli71"
-MY_ACCOUNT = "wli71_account"
+MY_UNAME = "zlin32"
+MY_ACCOUNT = "zlin32_account"
 AMOUNT = 10
 TEST_UNAME = "test"  # TODO:make sure of this
 
@@ -72,7 +72,7 @@ class BankManager:
             lambda: self.bank_client,
             self.bank_addr,
             self.bank_port,
-            family='default'
+            family='lzy_lab3'
         )
         printx("bank manager connected to bank with username: {}".format(
             self.bank_client._BankClientProtocol__loginName))
