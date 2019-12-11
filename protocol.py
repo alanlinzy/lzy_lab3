@@ -1,5 +1,5 @@
 import random
-from poop.protocol import POOP
+from ..poop.protocol import POOP
 from crypto_manager import *
 from playground.network.packet.fieldtypes.attributes import Optional
 from playground.network.packet.fieldtypes import UINT8, UINT32, STRING, BUFFER, LIST
