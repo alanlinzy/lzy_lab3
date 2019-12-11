@@ -33,7 +33,7 @@ def printError(string):
     print(string.center(80, '!')+'\n')
 
 def set_rule(num):
-    if num == None:
+    if num == 0:
         return
     global folder
     global domain
