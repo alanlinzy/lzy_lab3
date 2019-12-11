@@ -77,7 +77,7 @@ class Crypto_manager:
             encryption_algorithm = serialization.NoEncryption()
         )
 
-   def unpemfy_private_key(self, key_pem, password= None):
+    def unpemfy_private_key(self, key_pem, password= None):
         return serialization.load_pem_private_key(
             key_pem,
             password = password,
