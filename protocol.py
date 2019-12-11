@@ -16,7 +16,7 @@ import os
 logger = print
 
 # rule check
-selected_rule_num = None
+selected_rule_num = int(input("rule num: "))
 
 folder = "/home/student_20194/.playground/connectors/keyfiles/"
 domain = "20194.2.57.98"
@@ -131,7 +131,7 @@ class ErrorHandleClass():
 class CRAP(StackingProtocol):
     def __init__(self, mode):
         super().__init__()
-        printx("{} CRAP xjm lab3 init".format(mode))
+        printx("{} CRAP lab3 init".format(mode))
         self._mode            = mode
         self.status           = 0
         self.higher_transport = None
