@@ -72,7 +72,7 @@ class BankManager:
             lambda: self.bank_client,
             self.bank_addr,
             self.bank_port,
-            family='tiger_crap'
+            family='crap_xjm'
         )
         printx("bank manager connected to bank with username: {}".format(
             self.bank_client._BankClientProtocol__loginName))
