@@ -202,7 +202,7 @@ class CRAP(StackingProtocol):
         self.peer_iv = self.increment_byte(self.peer_iv)
         self.higherProtocol().data_received(pt)
 
-   def handshake_success(self):
+    def handshake_success(self):
         self.shared_secret = self.man.get_EC_derived_key(
             self.key,
             self.peer_EC_pubk
